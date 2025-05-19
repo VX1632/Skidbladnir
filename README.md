@@ -25,6 +25,9 @@ This project was built and maintained as part of a self-hosted homelab environme
 
 🏠 Originally designed and deployed in a hybrid homelab environment using Raspberry Pi 5 and x86 infrastructure.
 
+📊 [View the full architecture diagram with codenames](diagram/skidbladnir-architecture.md)
+
 ---
+
 
 > **Tags:** #homelab, #kubernetes, #raspberrypi, #infrastructure-as-code
