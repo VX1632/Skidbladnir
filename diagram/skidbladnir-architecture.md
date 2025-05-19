@@ -10,36 +10,37 @@
 
 ## Diagram
 
-                 ┌──────────────────────┐
-                 │    Public Internet   │
-                 └────────┬─────────────┘
-                          │
-                          ▼
-              ┌──────────────────────────┐
-              │     "Ghost Ship"         │   ◀─ (Reverse Proxy)
-              │  - TLS Termination       │
-              │  - IP Filtering / ACLs   │
-              │  - Rate Limiting         │
-              │  - OAuth / MFA Gateway   │
-              └────────┬─────────────────┘
-                       │
-              ┌────────▼────────┐
-              │   "Paper Boat"  │   ◀─ Ingress Layer (NGINX / Traefik)
-              │   Service Router│
-              └────────┬────────┘
-                       │
-     ┌─────────────────┼─────────────────────┐
-     ▼                 ▼                     ▼
-┌────────────┐   ┌────────────┐       ┌────────────┐
-│  Web Front │   │  API Layer │       │ GitOps / CI│
-│ (React/UI) │   │ (REST/gRPC)│       │ Controller  │
-└────────────┘   └────────────┘       └────────────┘
-                       │
-                       ▼
-                ┌────────────┐
-                │   DB Pod   │
-                │ (Postgres) │
-                └────────────┘
+             ┌──────────────────────┐
+             │    Public Internet   │
+             └────────┬─────────────┘
+                      │
+                      ▼
+          ┌──────────────────────────┐
+          │     "Ghost Ship"         │   ◀─ (Reverse Proxy)
+          │  - TLS Termination       │
+          │  - IP Filtering / ACLs   │
+          │  - Rate Limiting         │
+          │  - OAuth / MFA Gateway   │
+          └────────┬─────────────────┘
+                   │
+          ┌────────▼────────┐
+          │   "Paper Boat"  │   ◀─ Ingress Layer (NGINX / Traefik)
+          │   Service Router│
+          └────────┬────────┘
+                   │
+ ┌─────────────────┼─────────────────────┐
+ ▼                 ▼                     ▼
+┌────────────┐ ┌────────────┐ ┌────────────┐
+│ Web Front  │ │  API Layer │ │ GitOps / CI│
+│ (React/UI) │ │ (REST/gRPC)│ │ Controller │
+└────────────┘ └────┬───────┘ └────────────┘
+                    │               
+                    ▼               
+          ┌────────────┐
+          │   DB Pod   │
+          │ (Postgres) │
+          └────────────┘
+
 
 ## Notes
 
