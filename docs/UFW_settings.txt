@@ -1,0 +1,52 @@
+🛡️ Kubernetes UFW Firewall Rules (with Explanations)
+📘 Control Plane Node (e.g., k8s-hostname)
+
+# Install and enable UFW
+sudo apt update
+sudo apt install ufw -y
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+🔐 Required Inbound Ports for Kubernetes (Control Plane)
+
+# Custom SSH port (replace 9999 with your SSH port)
+sudo ufw allow 9999/tcp comment 'SSH custom port'
+
+# Kubernetes API Server
+sudo ufw allow from 10.10.50.0/24 to any port 6443 proto tcp comment 'Kubernetes API Server'
+
+# etcd server client API (used by kube-apiserver)
+sudo ufw allow from 10.10.50.0/24 to any port 2379 proto tcp comment 'etcd client (control plane only)'
+
+# etcd peer communication (for multi-master setups)
+sudo ufw allow from 10.10.50.0/24 to any port 2380 proto tcp comment 'etcd peer (control plane only)'
+
+# Kubelet API (control plane → node)
+sudo ufw allow from 10.10.50.0/24 to any port 10250 proto tcp comment 'kubelet API (control-plane-to-node)'
+
+# Controller Manager HTTPS (for health checks and metrics)
+sudo ufw allow from 10.10.50.0/24 to any port 10257 proto tcp comment 'controller manager (control plane only)'
+
+# Scheduler HTTPS (for health checks and metrics)
+sudo ufw allow from 10.10.50.0/24 to any port 10259 proto tcp comment 'scheduler (control plane only)'
+
+# (Optional) If using IPv6
+sudo ufw allow 9999/tcp comment 'SSH custom port (IPv6)'
+
+    🔍 Tighten the from IP range if possible. For example, if Device is your only control-plane node, allow 127.0.0.1 or just trusted IPs.
+
+✅ Enable UFW
+
+sudo ufw enable
+sudo ufw status numbered
+
+📋 Port Reference Summary
+Port	    Protocol	Service	                    Purpose
+9999	    TCP	      SSH	                        Custom secure SSH access
+6443	    TCP	      kube-apiserver	            Kubernetes API server
+2379	    TCP	      etcd	                      etcd client API
+2380	    TCP	      etcd	                      etcd peer-to-peer cluster comms
+10250	    TCP	      kubelet	                    API for control plane to nodes (logs, exec)
+10257	    TCP	      kube-controller-manager	    Health check / metrics server endpoint
+10259	    TCP	      kube-scheduler	            Health check / metrics server endpoint
+9999	    TCP	      SSH (IPv6)	                Custom SSH port (if IPv6 is in use)
