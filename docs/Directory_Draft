@@ -1,0 +1,30 @@
+k8s/
+├── base/                        # Core component definitions
+│   ├── infra/                   # Infrastructure: DNS, storage, monitoring
+│   │   ├── ingress-nginx/
+│   │   ├── cert-manager/
+│   │   ├── metallb/
+│   │   └── longhorn/            # Storage
+│   ├── platform/                # Core observability/logging/platform services
+│   │   ├── grafana/
+│   │   ├── loki/
+│   │   ├── prometheus/
+│   │   └── splunk/
+│   ├── apps/                    # Workloads
+│   │   ├── jellyfin/
+│   │   ├── nginx-dev/
+│   │   ├── manga-server/        # Placeholder for future personal project
+│   │   └── games/
+│   └── devtools/                # Tools you’re experimenting with
+│       ├── nginx-local/
+│       ├── custom-webapp/
+│       └── builder-tools/
+├── overlays/                    # Per environment tweaks
+│   ├── staging/
+│   │   └── kustomization.yaml
+│   └── prod/
+│       └── kustomization.yaml
+├── system/                      # RBAC, network policies, cluster-scoped stuff
+│   ├── namespaces/
+│   ├── network-policies/
+│   └── rbac/
