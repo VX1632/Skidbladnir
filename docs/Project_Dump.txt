@@ -1,0 +1,17 @@
+Project Goals:
+Kustomization
+  Kubernetes YAML tracker
+Nginx-dev
+
+Self-Hosted Communication Service
+  Matrix + Element
+Clipboard + Whiteboard Service
+  Content sanitization and fingerprinting
+  API server, frontend UI, database, customized scripts
+  file/data transfer
+
+Project Ideas:
+  Localized LLM integration
+    Ollama, lm-studio, BERT, ChatGPT
+
+
