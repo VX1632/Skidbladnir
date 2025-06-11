@@ -1,1 +1,10 @@
 RP sits in DMZ
+
+6.6.2025
+Kubernetes 1.31 fully linked and ready
+9.6.2025
+discovered HA was not enabled
+10.6.2025
+disassembled kubernetes 1.31 and upgraded to 1.32
+HA was enabled
+swap was turned off, directory ~/scrips a scp looping script was made to turn swap off on all remaining nodes
