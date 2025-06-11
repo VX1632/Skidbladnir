@@ -8,3 +8,9 @@ discovered HA was not enabled
 disassembled kubernetes 1.31 and upgraded to 1.32
 HA was enabled
 swap was turned off, directory ~/scrips a scp looping script was made to turn swap off on all remaining nodes
+
+
+Inventory
+Dell
+24 TB 
+64 gb ECC ram
