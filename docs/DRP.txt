@@ -1,0 +1,15 @@
+Disaster Recovery Plan
+# Remember, there is no simple and fast disaster recovery. Practice, practice, practice: Enforce destruction of clusters. Upgrade to the next latest version of Kubernetes to follow this mantra.
+# Don't upgrade clusters, create new ones to move to the newest version of Kubernetes
+
+11.6.2025
+Package proposal
+
+Data backups will be separate from infrastructure backups
+
+Valero - resouces with mutation that have critical yet missing components from the desired state.
+ArgoCD/flux - for all other resource
+
+Longhorn?
+
+
