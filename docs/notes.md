@@ -1,20 +1,41 @@
-RP sits in DMZ
+# 🗓️ Cluster Build Timeline (Phase 1 Progress)
 
-6.6.2025
-Kubernetes 1.31 fully linked and ready
-9.6.2025
-discovered HA was not enabled
-10.6.2025
-disassembled kubernetes 1.31 and upgraded to 1.32
-HA was enabled
-swap was turned off, directory ~/scrips a scp looping script was made to turn swap off on all remaining nodes
-15.6.2025
-Added a new Kubernetes Cluster node: UI (Pi 4 with a touchscreen GUI)
-Created microk8s dashboard-proxy and sucessfully tested dashboard-proxy locally as well as remotely, documentation for access added to docs
-16.6.2025
-Researching kubernetes application and created roadmap for self-hosted services
-17.6.2025
-Updated inconsistency with hostnames on Odrerir, a Pi 4 node. relabelled roles on kubernetes cluster
+This document tracks key infrastructure milestones and cluster events.
+
+---
+
+## ✅ June 6, 2025
+- **Kubernetes 1.31** fully linked and deployed.
+
+## ⚠️ June 9, 2025
+- Discovered **high-availability (HA)** was not enabled.
+
+## 🔧 June 10, 2025
+- Disassembled Kubernetes 1.31 cluster.
+- Upgraded to **Kubernetes 1.32**.
+- **HA mode enabled** for control plane.
+- Swap was turned off on Odin.
+- Created script in `~/scripts` for disabling swap across all nodes via `scp` loop.
+
+## ➕ June 15, 2025
+- Added new Kubernetes node: `worker node` (Raspberry Pi 4 with touchscreen GUI).
+- Enabled and tested `microk8s dashboard-proxy`:
+  - Verified access both **locally** and **remotely**.
+  - **Documented dashboard access instructions**.
+
+## 📚 June 16, 2025
+- Conducted research on Kubernetes applications.
+- Drafted **roadmap for self-hosted services** (AI, observability, security stack).
+
+## 🔁 June 17, 2025
+- Identified and corrected **hostname mismatch** on `worker node`.
+- Updated and relabeled **node roles** for all nodes in the cluster.
+- Added another pi 4 to the cluster, currently in reserves.
+
+---
+
+> _Note: All entries are tracked as part of infrastructure Phase 1 until the cluster is deemed stable, version-controlled, and able to redeploy workloads via GitOps._
+
 
 Inventory
 Dell
