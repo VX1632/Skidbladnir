@@ -1,0 +1,5 @@
+- name: Bootstrap Kubernetes cluster node
+  hosts: all
+  become: yes
+  roles:
+    - k8s-node
