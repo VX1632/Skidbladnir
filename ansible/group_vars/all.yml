@@ -1,0 +1,10 @@
+# group_vars/all.yml
+
+# Kubernetes cluster join variables
+# Make sure to fill these values in, these will be generated once the master node has been established and run.
+cluster_master_ip: "<master_node_IP>"
+cluster_join_token: "<cluster_join_token>"
+cluster_cert_hash: "<cluster_cert_hash>"
+
+# Default role for joining node (can override per host in inventory)
+cluster_join_mode: "worker"
