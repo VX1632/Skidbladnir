@@ -1,0 +1,5 @@
+ssh_hardening_rules:
+  - { regexp: '^#?Port ', line: 'Port 2222' }
+  - { regexp: '^#?PermitRootLogin', line: 'PermitRootLogin no' }
+  - { regexp: '^#?MaxAuthTries', line: 'MaxAuthTries 3' }
+  - { regexp: '^#?MaxSessions', line: 'MaxSessions 2' }
