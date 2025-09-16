@@ -1,0 +1,8 @@
+feeds:
+  - https://www.wiz.io/blog/rss.xml
+  - https://kubernetes.io/feed.xml
+  - https://www.cisa.gov/cybersecurity-advisories/all.xml
+  - https://feeds.feedburner.com/TheHackersNews
+  - https://www.aquasec.com/blog/feed/
+  - https://sysdig.com/blog/feed/
+  - https://www.redhat.com/en/rss/blog
