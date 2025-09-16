@@ -68,7 +68,7 @@ Until then, Skidbladnir remains the **primary public-facing framework**.
 - Originally deployed in a **hybrid cluster** using Raspberry Pi 5 (ARM64) and x86 infrastructure.  
 - Provisioning strategies are documented for **multi-arch image builds** and **distributed backup systems**.  
 
-[View the full architecture diagram with codenames](diagram/skidbladnir-architecture.md)  
+[View the full architecture diagram with codenames](diagram/skidbladnir-architecture.md)  Diagram is not final, I am still reworking the underlying pipelines and services.
 
 ---
 
